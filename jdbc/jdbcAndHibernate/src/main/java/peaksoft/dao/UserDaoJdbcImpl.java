@@ -78,7 +78,7 @@ public class UserDaoJdbcImpl implements UserDao {
     }
 
     public void cleanUsersTable() {
-        String sql = " delete * table users";
+        String sql = "delete from users";
         try (PreparedStatement prepared = connection.prepareStatement(sql)) {
             int i = prepared.executeUpdate();
             System.out.println(i + " clean user table!");
