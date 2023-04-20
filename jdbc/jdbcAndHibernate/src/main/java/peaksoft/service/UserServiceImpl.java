@@ -1,13 +1,14 @@
 package peaksoft.service;
 
 import peaksoft.dao.UserDao;
+import peaksoft.dao.UserDaoHibernateImpl;
 import peaksoft.dao.UserDaoJdbcImpl;
 import peaksoft.model.User;
 
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    private UserDao dao = new UserDaoJdbcImpl();
+    private UserDao dao = new UserDaoHibernateImpl();
 
     public void createUsersTable() {
         dao.createUsersTable();

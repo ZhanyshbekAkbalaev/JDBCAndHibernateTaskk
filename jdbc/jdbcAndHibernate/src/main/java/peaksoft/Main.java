@@ -30,6 +30,9 @@ public class Main {
                 case 3:
                     user.saveUser("Anyschema", "Balaclava", (byte) 19);
                     user.saveUser("Orality", "Digit", (byte) 20);
+                    user.saveUser("John","Wick",(byte) 50);
+                    user.saveUser("John","Snow",(byte) 50);
+                    user.saveUser("John","Doe",(byte) 50);
                     break;
                 case 4:
                     user.removeUserById(2L);
@@ -41,7 +44,7 @@ public class Main {
                     user.cleanUsersTable();
                     break;
                 case 7:
-                    Util.getConnection();
+                    Util.getSession();
                     break;
                 default:
                     System.out.println(num + " No!!!");

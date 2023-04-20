@@ -1,22 +1,23 @@
 package peaksoft.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Table
+import jakarta.persistence.*;
 
+
+@Entity
+@Table(name = "users")
 public class User {
     @Id
+    @GeneratedValue(generator = "user_gen",strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "user_gen",sequenceName = "user_seq",allocationSize = 1)
     private Long id;
 
-    @Column
+
     private String name;
 
-    @Column
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column
     private Byte age;
 
     public User() {
